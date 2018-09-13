@@ -1,0 +1,15 @@
+package aritmetica;
+
+public class PruebaAritmetica {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Aritemrica a= new Aritemrica();
+		
+		int resulatdo= a.sumar(1, 2);
+		
+		System.out.println("Resultado= " + resulatdo);
+		
+	}
+
+}

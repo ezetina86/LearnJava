@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;aritmetica&apos; to &apos;Aritmetica/src&apos;&#x0D;&#x0A;- Original project: &apos;AritneticaV2&apos;&#x0D;&#x0A;- Destination element: &apos;Aritmetica/src&apos;&#x0D;&#x0A;- Original element: &apos;AritneticaV2/src/aritmetica&apos;" description="Copy package" destination="=Aritmetica/src" element1="/src&lt;aritmetica" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1536618639140" version="1.0"/>
+</session>

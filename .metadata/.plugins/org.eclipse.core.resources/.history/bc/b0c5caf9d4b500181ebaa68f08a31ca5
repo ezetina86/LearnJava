@@ -1,0 +1,10 @@
+package palabrareutn;
+
+public class PalabraReturn {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

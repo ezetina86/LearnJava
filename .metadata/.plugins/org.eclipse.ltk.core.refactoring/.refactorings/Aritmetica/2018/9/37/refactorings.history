@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;aritmetica&apos; to &apos;AritneticaV2/src&apos;&#x0D;&#x0A;- Original project: &apos;Aritmetica&apos;&#x0D;&#x0A;- Destination element: &apos;AritneticaV2/src&apos;&#x0D;&#x0A;- Original element: &apos;Aritmetica/src/aritmetica&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=AritneticaV2/src" element1="/src&lt;aritmetica" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1536618635305" version="1.0"/>
+</session>
