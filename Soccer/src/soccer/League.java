@@ -42,7 +42,7 @@ public class League {
 		
 		player8.setPlayer("Arturo Arzate");
 		player9.setPlayer("Benito Bustamante");
-		player10.setPlayer("Carmelo Castañeda");
+		player10.setPlayer("Carmelo Canales");
 		player11.setPlayer("Daniel Duarte");
 		player12.setPlayer("Ezequiel Estrada");
 		player13.setPlayer("Felipe Farfan");
@@ -51,43 +51,48 @@ public class League {
 		Player[] thePlayers1 = {player1, player2, player3, player4 , player5 , player6 , player7};
 		Player[] thePlayers2 = {player8, player9, player10, player11 , player12 , player13 , player14};
 		
-		Team team1 = new Team();
-		Team team2 = new Team();
+		Team[] theTeams = createTeams();
 		
-		team1.setPlayerArray(thePlayers1);
-		team2.setPlayerArray(thePlayers2);
-		
-		team1.setTeamName("Alces FC");
-		team2.setTeamName("Ballenas FC");
-		
-		
-		System.out.println("\n Players of " + team1.getTeamName() + ": \n");
-		for(Player thePlayer: team1.playerArray) {
-			System.out.println(thePlayer.playerName);
-		}
-		
-		System.out.println("\n Players of " + team2.getTeamName() + ": \n");
-		for(Player thePlayer: team2.playerArray) {
-			System.out.println(thePlayer.playerName);
-		}
-		
-		Game currGame = new Game();
-		currGame.setHomeTeam(team1);
-		currGame.setAway(team2);
+		Game[] theGames = createGames(theTeams);
 		
 		Goal goal1 = new Goal();
-		goal1.setPlayer(currGame.homeTeam.playerArray[3]);
-		goal1.setTeam(team2);
+		goal1.setPlayer(player1);
+		goal1.setTeam(theTeams[0]); 
 		goal1.setTime(55);
 		
 		Goal[] theGoals = {goal1};
-		currGame.setGoals(theGoals);
 		
+		System.out.println("Goal scored after "+
+		goal1.getTime() + " mins by " + goal1.getPlayer().playerName + " of " + goal1.getTeam().teamName);
+
 		
-		System.out.println("\n");
-		goal1.showsGoal();
+	} 
+
+			
+		public static Team[] createTeams() {
+			
+			Team team1 = new Team();
+			Team team2 = new Team();
+			
+			team1.setTeamName("Alces");
+			team2.setTeamName("Burros");
+			
+			Team[] theTeams = {team1,team2};
+			
+			return theTeams;
+			
+		}
 		
+		public static Game[] createGames(Team[] theTeams) {
 		
+			Game theGame = new Game();
+			
+			theGame.homeTeam=theTeams[0];
+			theGame.homeTeam=theTeams[1];
+			
+			Game[] theGames = {theGame};
+			return theGames;
 	}
 
+	
 }
