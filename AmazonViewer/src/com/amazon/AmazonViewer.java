@@ -16,8 +16,6 @@ public class AmazonViewer {
 		System.out.println("By: Enrique Zetina");
 		System.out.println("-----------------------------------------");	
 
-		
-
 		int  exit =0;
 
 		do {
