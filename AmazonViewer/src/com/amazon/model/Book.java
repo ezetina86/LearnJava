@@ -1,71 +1,53 @@
 package com.amazon.model;
 
-public class Book {
+import java.util.Date;
+
+public class Book extends Publication implements IVisualizable {
 	
-	int idBook;
-	int isbnBook;
-	int numberOfPagesBook;
-	short yearBook;
-	short editionBook;
-	String titleBook;
-	String authorBook;
-	String publisherBook;
-	String languajeBook;
-	
-	
+	private int idBook;
+	private int timeReaded;
+
+	public Book(int isbnBook, String titleBook, String authorBook) {
+		super(isbnBook, titleBook, authorBook);
+	}
+
 	public int getIdBook() {
 		return idBook;
 	}
-	public void setIdBook(int idBook) {
-		this.idBook = idBook;
+	
+	
+	
+	public int getTimeReaded() {
+		return timeReaded;
 	}
-	public int getIsbnBook() {
-		return isbnBook;
+
+	public void setTimeReaded(int timeReaded) {
+		this.timeReaded = timeReaded;
 	}
-	public void setIsbnBook(int isbnBook) {
-		this.isbnBook = isbnBook;
+
+	@Override
+	public String toString() {
+		return "Tittle: " + getTitleBook() + "\n" +
+				"ISBN: " +  getIsbnBook() + "\n" +
+				"Author: " + getAuthorBook() + "\n";
 	}
-	public int getNumberOfPagesBook() {
-		return numberOfPagesBook;
+
+	@Override
+	public Date startToSee(Date dateI) {
+		// TODO Auto-generated method stub
+		return dateI;
 	}
-	public void setNumberOfPagesBook(int numberOfPagesBook) {
-		this.numberOfPagesBook = numberOfPagesBook;
+
+	@Override
+	public void stopToSee(Date dateI, Date dateF) {
+		// TODO Auto-generated method stub
+		if(dateF.getSeconds() > dateI.getSeconds()) {
+			setTimeReaded(dateF.getSeconds()- dateI.getSeconds());
+		}else{
+			setTimeReaded(0);
+		}
+		
 	}
-	public short getYearBook() {
-		return yearBook;
-	}
-	public void setYearBook(short yearBook) {
-		this.yearBook = yearBook;
-	}
-	public short getEditionBook() {
-		return editionBook;
-	}
-	public void setEditionBook(short editionBook) {
-		this.editionBook = editionBook;
-	}
-	public String getTitleBook() {
-		return titleBook;
-	}
-	public void setTitleBook(String titleBook) {
-		this.titleBook = titleBook;
-	}
-	public String getAuthorBook() {
-		return authorBook;
-	}
-	public void setAuthorBook(String authorBook) {
-		this.authorBook = authorBook;
-	}
-	public String getPublisherBook() {
-		return publisherBook;
-	}
-	public void setPublisherBook(String publisherBook) {
-		this.publisherBook = publisherBook;
-	}
-	public String getLanguajeBook() {
-		return languajeBook;
-	}
-	public void setLanguajeBook(String languajeBook) {
-		this.languajeBook = languajeBook;
-	}	
+	
 
 }

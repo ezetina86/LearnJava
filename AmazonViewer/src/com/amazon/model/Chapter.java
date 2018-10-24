@@ -1,65 +1,48 @@
 package com.amazon.model;
 
-public class Chapter {
+import java.util.ArrayList;
+
+public class Chapter extends Movie  {
 	
-	int idChapter;
-	int durationChapter;
-	int timeViewed;
-	int seasonNumberChapter;
-	short yearChapter;
-	boolean isViewedChalpter;
-	String titleChapter;
-	String directorChapter;
+	private int idChapter;
+	private int seasonNumberChapter;
 	
-	
+	public Chapter(int durationMovie, String titleMovie, String genereMovie, String creatorMovie, int year, int seasonNumberChapter) {
+		super(durationMovie, titleMovie, genereMovie, creatorMovie, year);
+		this.setSeasonNumberChapter(seasonNumberChapter);
+	}
+
 	public int getIdChapter() {
 		return idChapter;
 	}
-	public void setIdChapter(int idChapter) {
-		this.idChapter = idChapter;
-	}
-	public int getDurationChapter() {
-		return durationChapter;
-	}
-	public void setDurationChapter(int durationChapter) {
-		this.durationChapter = durationChapter;
-	}
-	public int getTimeViewed() {
-		return timeViewed;
-	}
-	public void setTimeViewed(int timeViewed) {
-		this.timeViewed = timeViewed;
-	}
+
 	public int getSeasonNumberChapter() {
 		return seasonNumberChapter;
 	}
+
 	public void setSeasonNumberChapter(int seasonNumberChapter) {
 		this.seasonNumberChapter = seasonNumberChapter;
 	}
-	public short getYearChapter() {
-		return yearChapter;
-	}
-	public void setYearChapter(short yearChapter) {
-		this.yearChapter = yearChapter;
-	}
-	public boolean isViewedChalpter() {
-		return isViewedChalpter;
-	}
-	public void setViewedChalpter(boolean isViewedChalpter) {
-		this.isViewedChalpter = isViewedChalpter;
-	}
-	public String getTitleChapter() {
-		return titleChapter;
-	}
-	public void setTitleChapter(String titleChapter) {
-		this.titleChapter = titleChapter;
-	}
-	public String getDirectorChapter() {
-		return directorChapter;
-	}
-	public void setDirectorChapter(String directorChapter) {
-		this.directorChapter = directorChapter;
+	
+	@Override
+	public String toString() {
+		
+		return "Tittle: " + getTitleMovie() + "\n" +
+				"Genere: " +  getGenereMovie() + "\n" +
+				"Year: " + getYearMovie() + "\n" +
+				"Creator:" + getCreatorMovie() +  "\n";
+		
 	}
 	
-
+	public static ArrayList<Chapter> makeChapterList(){
+		
+		ArrayList<Chapter> chapters  = new ArrayList<Chapter>();
+		
+		for (int i = 1; i <5; i++) {
+			chapters.add(new Chapter(20, "Capitulo. "+i, "Terror", "Zetina", 2018+1, i));
+		}
+		
+		return chapters;
+	}
+	
 }

@@ -1,78 +1,72 @@
 package com.amazon.model;
 
-public class Movie {
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Movie extends Film implements IVisualizable{
 	
-	int durationMovie;
-	int timeViewedMovie;
-	short yearMovie;
-	boolean isViewedMovie;
-	String titleMovie;
-	String genereMovie;
-	String creatorMovie;
-	String directorMovie;
-	String countryMovie;
-	
-	int idMovie;
-	public int getIdMovie() {
-		return idMovie;
+	private int idMovie;
+	private int timeViewedMovie;
+
+	public Movie(int durationMovie, String titleMovie, String genereMovie, String creatorMovie, int year) {
+		super(durationMovie, titleMovie, genereMovie, creatorMovie);
+		setYearMovie((short)year);
 	}
-	public void setIdMovie(int idMovie) {
-		this.idMovie = idMovie;
+
+	public void showData() {
+		/*System.out.println("Titte: " + titleMovie);
+		System.out.println("Genere: " + genereMovie);
+		System.out.println("Year: " + yearMovie);*/
 	}
-	public int getDurationMovie() {
-		return durationMovie;
-	}
-	public void setDurationMovie(int durationMovie) {
-		this.durationMovie = durationMovie;
-	}
+
 	public int getTimeViewedMovie() {
 		return timeViewedMovie;
 	}
+
 	public void setTimeViewedMovie(int timeViewedMovie) {
 		this.timeViewedMovie = timeViewedMovie;
 	}
-	public short getYearMovie() {
-		return yearMovie;
+
+	public int getIdMovie() {
+		return idMovie;
 	}
-	public void setYearMovie(short yearMovie) {
-		this.yearMovie = yearMovie;
-	}
-	public boolean isViewedMovie() {
-		return isViewedMovie;
-	}
-	public void setViewedMovie(boolean isViewedMovie) {
-		this.isViewedMovie = isViewedMovie;
-	}
-	public String getTitleMovie() {
-		return titleMovie;
-	}
-	public void setTitleMovie(String titleMovie) {
-		this.titleMovie = titleMovie;
-	}
-	public String getGenereMovie() {
-		return genereMovie;
-	}
-	public void setGenereMovie(String genereMovie) {
-		this.genereMovie = genereMovie;
-	}
-	public String getCreatorMovie() {
-		return creatorMovie;
-	}
-	public void setCreatorMovie(String creatorMovie) {
-		this.creatorMovie = creatorMovie;
-	}
-	public String getDirectorMovie() {
-		return directorMovie;
-	}
-	public void setDirectorMovie(String directorMovie) {
-		this.directorMovie = directorMovie;
-	}
-	public String getCountryMovie() {
-		return countryMovie;
-	}
-	public void setCountryMovie(String countryMovie) {
-		this.countryMovie = countryMovie;
+	
+	@Override
+	public String toString() {
+		return "Tittle: " + getTitleMovie() + "\n" +
+				"Genere: " +  getGenereMovie() + "\n" +
+				"Year: " + getYearMovie() + "\n" +
+				"Creator:" + getCreatorMovie() +  "\n";
 	}
 
+	@Override
+	public Date startToSee(Date dateI) {
+		// TODO Auto-generated method stub
+		return dateI;
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public void stopToSee(Date dateI, Date dateF) {
+		// TODO Auto-generated method stub
+		if(dateF.getSeconds() > dateI.getSeconds()) {
+			setTimeViewedMovie(dateF.getSeconds()- dateI.getSeconds());
+		}else{
+			setTimeViewedMovie(0);
+		}
+		
+	}
 	
+	public static ArrayList<Movie> makeMoviesList(){
+		ArrayList<Movie>  movies = new ArrayList<Movie>();
+		
+		movies.add(new Movie(120, "Coco", "Animation", "Lee", (short)2017));
+		for (int i = 1; i < 10; i++) {
+			movies.add(new Movie(120, "Coco" + i , "Animation" + i, "Lee" + 1 , (short)2017+i));
+		}
+		
+		return movies;
+		
+	}
+
 }
