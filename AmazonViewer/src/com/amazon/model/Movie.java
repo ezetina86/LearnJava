@@ -3,6 +3,13 @@ package com.amazon.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+
+/**
+ * Hereda de {@link Film}
+ * Implementa {@IVisualizable}
+ * @author Enrique Zetina
+ *
+ */
 public class Movie extends Film implements IVisualizable{
 	
 	private int idMovie;
@@ -66,6 +73,24 @@ public class Movie extends Film implements IVisualizable{
 		}
 		
 		return movies;
+		
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void viewed() {
+		// TODO Auto-generated method stub
+		Date dateI = startToSee(new Date());
+		for (int i = 0; i < 1000; i++) {
+			System.out.println(".........");
+		}
+		stopToSee(dateI, new Date());
+		System.out.println();
+		System.out.println("You saw: " + toString());
+		System.out.println("During: " + getTimeViewedMovie() + " seconds");
+		setViewedMovie(true);
 		
 	}
 

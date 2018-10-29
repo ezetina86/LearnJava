@@ -64,6 +64,12 @@ public class Serie extends Film {
 		
 	}
 
+	@Override
+	public void viewed() {
+		// TODO Auto-generated method stub
+		setViewedMovie(true);
+	}
+
 	
 	
 }

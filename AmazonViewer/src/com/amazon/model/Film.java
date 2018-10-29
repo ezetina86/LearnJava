@@ -1,6 +1,16 @@
 package com.amazon.model;
 
-public class Film {
+/**
+ * <h1>Film</h1>
+ * Clase padre abstracta base de la familia FILM
+ * Contiene el método abstracto 
+ * {@code view()} obligartio para toda la familia FILM
+ * @author Enrique Zetina
+ * @version 1.1
+ * @since 2018
+ */
+
+public abstract class Film {
 	
 	//encapsulamiento
 		private int durationMovie;		
@@ -88,4 +98,8 @@ public class Film {
 			this.isViewedMovie = isViewedMovie;
 		}
 		
+		/**
+		 * Metodo obligartorio
+		 */
+		public abstract void viewed();
 }

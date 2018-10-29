@@ -7,13 +7,27 @@ import java.util.Date;
 import java.util.Scanner;
 
 import com.amazon.model.Chapter;
+import com.amazon.model.Film;
 import com.amazon.model.Movie;
 import com.amazon.model.Serie;
 import com.ezetina.makereport.Report;
 
+
+
+
+/**
+ * <h1>Amazon Viewer </h1>
+ * Amazon viewer nospermite visualizar Peliculas, Revistas, Libros
+ * Permite la visualizacion de reportes.
+ * @author Enrique Zetina
+ * @version 1.1
+ * @since 2018
+ */
 public class AmazonViewer {
 
 	public static void main(String[] args) {
+
+		
 		// TODO Auto-generated method stub
 
 		System.out.println("-----------------------------------------");
@@ -23,7 +37,13 @@ public class AmazonViewer {
 		System.out.println("By: Enrique Zetina");
 		System.out.println("-----------------------------------------");
 		
+		//Polimorfismo entre  clases
 		
+		/*Film film1 = new Movie(120, "Terminator", "Fiction", "Lee", (short)1986);
+		film1.viewed();
+		
+		Film film2 = new Chapter(20, "Pilot", "Action", "Morris", (short) 1997, 1);
+		film2.viewed();*/
 		
 		showMenu();
 	}
@@ -119,15 +139,8 @@ public class AmazonViewer {
 			
 			if (response >0) {
 				Movie movieSelected = movies.get(response - 1);
-				Date dateI = movieSelected.startToSee(new Date());
-				for (int i = 0; i < 1000; i++) {
-					System.out.println(".........");
-				}
-				movieSelected.stopToSee(dateI, new Date());
-				System.out.println();
-				System.out.println("You saw: " + movieSelected);
-				System.out.println("During: " + movieSelected.getTimeViewedMovie() + " seconds");
-				movieSelected.setViewedMovie(true);
+				movieSelected.viewed();
+				
 			}			
 		}while( exit !=0);
 		
@@ -189,15 +202,7 @@ public class AmazonViewer {
 		
 		if (response>0) {
 			Chapter chapterSelected = chaptersOfSerieSelected.get(response - 1);
-			chapterSelected.setViewedMovie(true);
-			Date dateI = chapterSelected.startToSee(new Date());
-			for (int i = 0; i < 1000; i++) {
-				System.out.println(".........");
-			}
-			chapterSelected.stopToSee(dateI, new Date());
-			System.out.println();
-			System.out.println("You saw:" + chapterSelected);
-			System.out.println("During: " + chapterSelected.getTimeViewedMovie() + " seconds");
+			chapterSelected.viewed();
 		}
 			
 		}while(exit !=0);
@@ -222,7 +227,6 @@ public class AmazonViewer {
 		}while( exit !=0);
 		
 	}
-	
 	
 	public static  void makeReport() {
 		Report rep = new Report();
@@ -257,4 +261,7 @@ public class AmazonViewer {
 		rep.setContent(content);
 		rep.makeReport();
 	}
+	
+	
+
 }
