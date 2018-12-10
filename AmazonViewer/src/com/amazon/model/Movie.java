@@ -2,7 +2,7 @@ package com.amazon.model;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+import com.amazon.dao.MovieDAO;
 
 /**
  * Hereda de {@link Film}
@@ -10,10 +10,14 @@ import java.util.Date;
  * @author Enrique Zetina
  *
  */
-public class Movie extends Film implements IVisualizable{
+public class Movie extends Film implements IVisualizable, MovieDAO{
 	
 	private int idMovie;
 	private int timeViewedMovie;
+	
+	public Movie() {
+		
+	};
 
 	public Movie(int durationMovie, String titleMovie, String genereMovie, String creatorMovie, int year) {
 		super(durationMovie, titleMovie, genereMovie, creatorMovie);
@@ -36,6 +40,10 @@ public class Movie extends Film implements IVisualizable{
 
 	public int getIdMovie() {
 		return idMovie;
+	}
+	
+	public void setIdMovie(int idMovie) {
+		this.idMovie=idMovie;
 	}
 	
 	@Override
@@ -65,16 +73,9 @@ public class Movie extends Film implements IVisualizable{
 	}
 	
 	public static ArrayList<Movie> makeMoviesList(){
-		ArrayList<Movie>  movies = new ArrayList<Movie>();
-		
-		movies.add(new Movie(120, "Coco", "Animation", "Lee", (short)2017));
-		for (int i = 1; i < 10; i++) {
-			movies.add(new Movie(120, "Coco" + i , "Animation" + i, "Lee" + 1 , (short)2017+i));
-		}
-		
-		return movies;
-		
-	}
+		Movie movie = new Movie();
+		return movie.read();
+    }
 
 	/**
 	 * {@inheritDoc}

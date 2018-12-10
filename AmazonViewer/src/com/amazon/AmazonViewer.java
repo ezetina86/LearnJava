@@ -11,8 +11,9 @@ import com.amazon.model.Film;
 import com.amazon.model.Movie;
 import com.amazon.model.Serie;
 import com.ezetina.makereport.Report;
-
-
+import com.mysql.jdbc.Util;
+import com.amazon.*;
+import com.util.*;
 
 
 /**
@@ -130,11 +131,12 @@ public class AmazonViewer {
 			System.out.println("0.- Regresar al menu Anterior");
 			System.out.println();
 			
-			Scanner sc = new Scanner(System.in);
-			int response = Integer.valueOf(sc.nextInt());
+			int response = com.util.AmzonUtil.validate(0, movies.size());
 			
 			if(response ==0) {
+				exit=0;
 				showMenu();
+				break;
 			}
 			
 			if (response >0) {

@@ -22,6 +22,9 @@ public abstract class Film {
 		private String countryMovie;
 		private boolean isViewedMovie;
 		
+		public Film() {
+			
+		}
 		
 		public Film(int durationMovie, String titleMovie, String genereMovie, String creatorMovie) {
 			super();
