@@ -114,9 +114,9 @@ public class AmazonViewer {
 
 		
 	}
-	static ArrayList<Movie> movies = Movie.makeMoviesList();
+	static ArrayList<Movie> movies = new ArrayList<>();
 	public static void showMovies() {
-		
+		movies = Movie.makeMoviesList();
 		int exit=1;
 		
 		do {
@@ -231,20 +231,23 @@ public class AmazonViewer {
 	}
 	
 	public static  void makeReport() {
-		Report rep = new Report();
-		rep.setNameFile("Report");
-		rep.setExtension(".txt");
-		rep.setTittle(":::Vistos:::");
-		String content = "";
-		for (Movie movie : movies) {
-			if(movie.getIsViewed()) {
-				content += movie.toString() + "\n";
+			Report rep = new Report();
+			rep.setNameFile("Report");
+			rep.setExtension(".txt");
+			rep.setTittle(":::Vistos:::");
+			String content = "";
+			for (Movie movie : movies) {
+				if(movie.getIsViewed()) {
+					content += movie.toString() + "\n";
+				}
 			}
-		}
-		
-		rep.setContent(content);
-		rep.makeReport();
-		
+			
+			rep.setContent(content);
+			rep.makeReport();
+			System.out.println("Reporte generado");
+			System.out.println();
+			showMenu();
+
 	}
 	
 	public static void makeReport(Date date) {

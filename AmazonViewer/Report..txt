@@ -1,16 +1,25 @@
 Tittle: Coco
-Genere: Animation
+Genere: Animación
 Year: 2017
-Creator:Lee
-Tittle: Coco2
-Genere: Animation2
-Year: 2019
-Creator:Lee1
-Tittle: Coco5
-Genere: Animation5
-Year: 2022
-Creator:Lee1
-Tittle: Coco8
-Genere: Animation8
-Year: 2025
-Creator:Lee1
+Creator:Pixart
+
+Tittle: Titanic
+Genere: Drama
+Year: 1997
+Creator:James Cameron
+
+Tittle: Avatar
+Genere: Ficción
+Year: 2009
+Creator:James Cameron
+
+Tittle: Amélie
+Genere: Romance
+Year: 2001
+Creator:Jean-Pierre Jeunet
+
+Tittle: Sombra del Agua
+Genere: Drama-Fantasía
+Year: 2017
+Creator:Guillermo del Toro
+

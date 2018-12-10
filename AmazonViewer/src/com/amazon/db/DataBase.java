@@ -20,14 +20,16 @@ public class DataBase {
 	public static final String TMATERIAL       = "material";
 	public static final String TMATERIAL_ID    = "id";
 	public static final String TMATERIAL_NAME  = "name";
+	public static final int[] IDMATERIALS = {1,2,3,4,5};
 	
 	public static final String TUSER        = "user";
 	public static final String TUSER_ID     = "id";
 	public static final String TUSER_NAME   = "name";
+	public static  final int TUSER_IDUSER = 1;
 	
 	public static final String TVIEWED             = "viewed";
 	public static final String TVIEWED_ID          = "id";
-	public static final String TVIEWED_IDMATERIAL  = "id_material";
+	public static final String TVIEWED_IDM         = "id_material";
 	public static final String TVIEWED_IDELEMENT   = "id_element";
 	public static final String TVIEWED_IDUSER      = "id_user";
 
