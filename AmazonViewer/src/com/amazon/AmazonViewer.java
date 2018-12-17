@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.amazon.model.Chapter;
 import com.amazon.model.Film;
@@ -124,9 +125,12 @@ public class AmazonViewer {
 			System.out.println("::MOVIES::");
 			System.out.println();
 			
+			AtomicInteger atomicintenger  = new AtomicInteger(1);
+			movies.forEach(m -> System.out.println(atomicintenger.getAndIncrement()+". "+m.getTitleMovie() + " is viewed: " + m.isViewedMovie()));
+			/*
 			for (int i = 0; i < movies.size(); i++) {
 				System.out.println(i+1 + ". " + movies.get(i).getTitleMovie() + " is viewed: " + movies.get(i).isViewedMovie());
-			}
+			}*/
 			System.out.println();
 			System.out.println("0.- Regresar al menu Anterior");
 			System.out.println();
@@ -235,14 +239,18 @@ public class AmazonViewer {
 			rep.setNameFile("Report");
 			rep.setExtension(".txt");
 			rep.setTittle(":::Vistos:::");
-			String content = "";
-			for (Movie movie : movies) {
+			StringBuilder content = new StringBuilder();
+			
+			movies.stream().filter(m ->  m.getIsViewed())
+			.forEach(m -> content.append(m.toString() + "\n"));
+			
+			/*for (Movie movie : movies) {
 				if(movie.getIsViewed()) {
 					content += movie.toString() + "\n";
 				}
-			}
+			}*/
 			
-			rep.setContent(content);
+			rep.setContent(content.toString());
 			rep.makeReport();
 			System.out.println("Reporte generado");
 			System.out.println();
