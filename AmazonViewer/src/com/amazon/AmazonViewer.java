@@ -260,7 +260,7 @@ public class AmazonViewer {
 	
 	public static void makeReport(Date date) {
 		SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
-		String dateString = df.format(date);
+		Str++ng dateString = df.format(date);
 		Report rep = new Report();
 		rep.setNameFile("Report"+ dateString);
 		rep.setExtension(".txt");
