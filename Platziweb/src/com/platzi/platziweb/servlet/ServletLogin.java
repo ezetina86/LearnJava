@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletLogin
  */
-@WebServlet(description = "Servlet para manipular la peticion de login", urlPatterns = { "/ServletLogin" })
+@WebServlet(description = "Servlet para manipular la peticion de login", urlPatterns = { "/abc123" })
 public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,12 +34,12 @@ public class ServletLogin extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		if (user != null && company!= null) {
 			if (company.equals("Platzi")) {
-				writer.println("Welcome to Platzi");
+				writer.println(" Welcome to Platzi");
 			}else {
-				writer.println("Welcome......");
+				writer.println(" Welcome......");
 			}
 		}else {
-			writer.println("Incoirrect user");
+			writer.println(" Incoirrect user");
 		}
 		writer.close();
 	}
