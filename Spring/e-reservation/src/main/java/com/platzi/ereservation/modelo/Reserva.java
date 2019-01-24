@@ -36,6 +36,6 @@ public class Reserva {
 	private int cantidadPersonaRes;
 	private String descripcionres;
 	@ManyToOne
-	@JoinColumn(name="idCli")
+	@JoinColumn(name="identificacionCli")
 	private Cliente cliente;
 }

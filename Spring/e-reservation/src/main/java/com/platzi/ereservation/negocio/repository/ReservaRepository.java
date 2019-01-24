@@ -16,7 +16,7 @@ import com.platzi.ereservation.modelo.Reserva;
  */
 public interface ReservaRepository extends JpaRepository<Reserva, String>{
 	
-	@Query("SELET r FROM Reserva r WHERE r.fechaIngresoRes =: fechaInicio AND r.fechaSalidaRes =: fechaSalida")
+	@Query("SELECT r FROM Reserva r WHERE r.fechaIngresoRes =: fechaInicio AND r.fechaSalidaRes =: fechaSalida")
 	public List<Reserva> find(@Param("fechaInicio") Date fechaInicio,@Param("fechaSalida") Date fechaSalida);
 
 }

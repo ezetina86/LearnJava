@@ -26,7 +26,7 @@ public class Cliente {
 	@Id
 	@GeneratedValue (generator="systrem-uuid")
 	@GenericGenerator(name="systrem-uuid", strategy="uuid2")
-	 private String idCli;
+	 private String identificacionCli;
 	 private String nombreCli;
 	 private String apellidoCli;
 	 private String direccionCli;
