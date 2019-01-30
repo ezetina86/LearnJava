@@ -63,6 +63,18 @@
 			<version>2.7.0</version>
 		</dependency>
 		
+		<!-- SECURITTY -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<!-- STARTER TEST-->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		
 			
 	</dependencies>
 
