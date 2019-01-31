@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.2.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.platzi</groupId>
 	<artifactId>e-reservation</artifactId>
@@ -29,64 +30,64 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-	   <!-- Lombok -->
+
+		<!-- Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
-			
+
 		<!-- JPA -->
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
+
 		<!-- POSTGRES -->
 		<dependency>
-		    <groupId>org.postgresql</groupId>
+			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
-		
+
 		<!-- SWAGGER -->
 		<dependency>
-		    <groupId>io.springfox</groupId>
+			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.7.0</version>
 		</dependency>
-		
+
 		<!-- SWAGGER-UI -->
 		<dependency>
-		    <groupId>io.springfox</groupId>
+			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.7.0</version>
 		</dependency>
-		
+
 		<!-- SECURITTY -->
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		
-		<!-- STARTER TEST-->
+
+		<!-- STARTER TEST -->
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-		
-		<!--THYMELEAF-->
+
+		<!--THYMELEAF -->
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-		
-		
-			
+
+
+
 	</dependencies>
 
 	<build>
-	<finalName>e-reservation</finalName>
+		<finalName>e-reservation</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -95,34 +96,40 @@
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.21.0</version>
+				<version>0.28.0</version>
 				<configuration>
 					<images>
-						<name>ezetina86/${project.build.finalName}</name>
-						<build>
-							<from>openjdk:lastest</from>
-							<enterPoint>java -Dspring.profiles.active=prod -jar /home/Henry/Documents/Cursos/Java/Spring/DockerImages/${project.build.finalName}</enterPoint>
-							<assembly>
-								<basedir> /home/Henry/Documents/Cursos/Java/Spring/DockerImages/</basedir>
-									<descriptionref>artifact</descriptionref>
-								<inline>
-									<id>assembly</id>
-									<files>
-										<file>
-											<source>target/${project.build.finalName}.jar</source>
-										</file>
-									</files>
-								</inline>
-							</assembly>
-							<tags>lastest</tags>
-							<ports>
-								<port>8080</port>
-							</ports>
-						</build>
-						<run>
-							<namingStrategy>alias</namingStrategy>
-						</run>
-						<alias>{project.build.finalName}</alias>
+						<image>
+							<name>ezetina86/${project.build.finalName}</name>
+							<build>
+								<from>openjdk</from>
+								<entryPoint>
+									java -Dspring.profiles.active=prod -jar /home/Henry/Documents/Cursos/Java/Spring/app/${project.build.finalName}.jar
+								</entryPoint>
+								<assembly>
+									<basedir>/home/Henry/Documents/Cursos/Java/Spring/app/</basedir>
+									<descriptorRef>artifact</descriptorRef>
+									<inline>
+										<id>assembly</id>
+										<files>
+											<file>
+												<source>target/${project.build.finalName}.jar</source>
+											</file>
+										</files>
+									</inline>
+								</assembly>
+								<tags>
+									<tag>latest</tag>
+								</tags>
+								<ports>
+									<port>8080</port>
+								</ports>
+							</build>
+							<run>
+								<namingStrategy>alias</namingStrategy>
+							</run>
+							<alias>{project.build.finalName}</alias>
+						</image>
 					</images>
 				</configuration>
 			</plugin>
