@@ -919,3 +919,5 @@
 2019-02-25 12:36:55,438 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
 2019-02-25 12:36:55,450 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-02-25 12:36:55,450 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Cursos\Java\Repository\LearnJava\Spring\e-reservation\src\test\resources
+2019-02-25 15:26:39,384 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-03-21 12:01:11,895 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

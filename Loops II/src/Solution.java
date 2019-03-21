@@ -13,12 +13,14 @@ class Solution {
 			int tempAnswer = a;
 			for (int j = 0; j < n; j++) {
 				tempAnswer += (int) (Math.pow(2.0, j) * b);
-				System.out.println(tempAnswer + " ");
+				System.out.print(tempAnswer + " ");
+
 			}
+			System.out.println(" ");
 
 		}
 
 		in.close();
-	}	
+	}
 
 }
